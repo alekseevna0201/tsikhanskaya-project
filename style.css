@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#canvas, #main-background {
+  position: absolute;
+  left: 150px;
+  border: 2px solid darkseagreen;
+}
+
+#main-background {
+  width: 1000px;
+  height: 600px;
+  background-image: url("img/bg1.jpg");
+}
+
+#note {
+  position: relative;
+  left: 10px;
+  display: block;
+  z-index: 100;
+  width: 100px;
+}
+
+#menu {
+  position: absolute;
+}
+
+#menu img {
+  display: block;
+  margin: 15px;
+  background: linear-gradient(green, yellow);
+}
+
+#menu p {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  background: linear-gradient(green, yellow);
+  left: 10%;
+  text-align: center;
+  padding: 10px;
+}
+
+#forPlay, #lose {
+  position: absolute;
+  width: 40%;
+  height: 30%;
+  background: white;
+  left: 30%;
+  top: 40%;
+  border: 5px solid black;
+  border-radius: 5px;
+  box-shadow: -3px 0 97px 4px #000000 inset;
+  z-index: 100;
+}
+
+#lose {
+  display: none;
+}
+
+#play, #play-again {
+  font-size: 42px;
+  color: green;
+  text-align: center;
+}
+
+.circle, .circle2{
+  border-radius: 100%;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  left: 40%;
+  cursor: pointer;
+  box-shadow: -3px 0 97px 4px darkolivegreen inset;
+}
+
