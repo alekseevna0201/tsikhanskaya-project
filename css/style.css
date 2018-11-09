@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Amatic SC";
+  src: url("../Font/AmaticSC-Regular.ttf");
+}
+
+body {
+  max-width: 1560px;
+  margin: 0;
+  padding: 0;
+}
+
+#canvas, #main-background, #bg-win {
+  position: absolute;
+  left: 150px;
+  border: 2px solid darkseagreen;
+}
+
+#main-background {
+  width: 1000px;
+  height: 600px;
+  background-image: url("../img/bg1.jpg");
+}
+
+#note {
+  position: relative;
+  left: 10px;
+  display: block;
+  z-index: 100;
+  width: 100px;
+}
+
+#menu {
+  position: absolute;
+}
+
+#menu img {
+  display: block;
+  margin: 15px;
+  background: linear-gradient(darkolivegreen, yellow);
+}
+
+#menu p {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  background: linear-gradient(darkolivegreen, yellow);
+  left: 10%;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 10px 10px 15px grey;
+}
+
+#menu p, #play-again, #play {
+  font-family: "Amatic SC";
+  font-size: 38px;
+}
+
+#forPlay, #lose {
+  position: absolute;
+  width: 40%;
+  height: 30%;
+  background: white;
+  left: 30%;
+  top: 40%;
+  border: 5px solid black;
+  border-radius: 5px;
+  box-shadow: 10px 10px 35px black;
+  z-index: 100;
+}
+
+#lose {
+  display: none;
+}
+
+#play, #play-again {
+  font-size: 42px;
+  color: green;
+  text-align: center;
+}
+
+.circle, .circle2{
+  border-radius: 100%;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  left: 40%;
+  cursor: pointer;
+  box-shadow: 10px 10px 15px grey;
+  background: darkolivegreen;
+}
+/*
+canvas#c {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  z-index: -1;
+}
+*/
+#logo {
+  width: 110px;
+  height: 110px;
+  border: 10px solid darkolivegreen;
+  box-shadow: 10px 10px 15px grey;
+  border-radius: 100%;
+  position: relative;
+  left: 88%;
+}
+
+#logo img {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(-20deg);
+}
+
+#bg-win {
+  background-image: url("https://million-wallpapers.ru/wallpapers/2/12/426168025409402.jpg");
+  background-size: contain;
+  width: 1000px;
+  height: 600px;
+  display: none;
+}
