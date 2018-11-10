@@ -34,11 +34,11 @@ var mainDiv = document.querySelector('#main-background');
 var winDiv = document.querySelector('#bg-win');
 var sBox = document.getElementById('time');
 var pauseBox = document.getElementById('pause');
-var rulesBox = document.getElementById('rules');
+var rulesBox = document.getElementById('read-rules');
 
 house.src = "img/house.png";
 plane.src = "img/plane1.png"; // Указание нужного изображения
-bg.src = "img/bg1.jpg"; // Аналогично
+bg.src = "img/bg2.jpg"; // Аналогично
 obstacleUp.src = "img/rock.png"; // Аналогично
 obstacleBottom.src = "img/tree.png"; // Аналогично
 
@@ -125,6 +125,7 @@ musicBox.onclick = function () {
 
 function startGame() {
   //////////////////////////////////   TIMER SECOND !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
   (function () {
     var times = 30;
 
@@ -196,8 +197,8 @@ pauseBox.onclick = function () {
 };
 
 rulesBox.onclick = function () {
-  confirm('Цель игры - обойти 10 препятствий за 30 секунд.\n' +
-    'Для управления самолетом нажимайте любую клавишу\n' +
-    '\n Для продолжения нажмите OK');
+  confirm('Для управления самолетом просто жмите любую клавишу.\n' +
+    'Не забывайте, что самолет имеет гравитацию.\n' +
+    'Чтобы продолжите нажмите ОК');
 };
 

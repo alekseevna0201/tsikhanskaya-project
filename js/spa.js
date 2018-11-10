@@ -4,12 +4,6 @@ window.onhashchange = SwitchToStateFromURLHash;
 
 var SPAStateH={};
 
-var PhotosH=
-  {
-    1 : { image:"img/Hilu3.jpg", comment:"собака Шарик" },
-    2 : { image:"img/Retriever3.jpg", comment:"собака Барбос" }
-  };
-
 function SwitchToStateFromURLHash () {
   var URLHash=window.location.hash;
 
@@ -20,7 +14,7 @@ function SwitchToStateFromURLHash () {
     SPAStateH=JSON.parse(StateJSON); // если JSON непустой, читаем из него
                                      // состояние и отображаем
   else
-    SPAStateH={pagename:'Main'}; // иначе показываем главную страницу
+    SPAStateH = {pagename:'Main'}; // иначе показываем главную страницу
 
   console.log('Новое состояние приложения:');
   console.log(SPAStateH);

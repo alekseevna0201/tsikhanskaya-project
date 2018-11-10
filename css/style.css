@@ -9,6 +9,36 @@ body {
   padding: 0;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/bg1.jpg");
+}
+
+input {
+  width: 20%;
+  height: 40px;
+}
+
+input:first-child {
+  margin-left: 10%;
+}
+
+footer {
+  background: lightgreen;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+}
+
+#front {
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  top: 50px;
+}
+
 #canvas, #main-background, #bg-win {
   position: absolute;
   left: 150px;
@@ -89,15 +119,7 @@ body {
   box-shadow: 10px 10px 15px grey;
   background: darkolivegreen;
 }
-/*
-canvas#c {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #000;
-  z-index: -1;
-}
-*/
+
 #logo {
   width: 110px;
   height: 110px;
