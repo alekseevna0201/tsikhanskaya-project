@@ -87,7 +87,7 @@ function draw() {
       playAgain();
     }
 
-    if (obstacle[i].x === plane.x - 40) {
+    if (obstacle[i].x === 40) {
       score++;
       scoreAudio.play();
     }
@@ -102,7 +102,7 @@ function draw() {
   ctx.shadowBlur = 3;
   ctx.fillText('Счет: ' + score, cvs.width / 2, 50);
 
-  if (score === 2) {
+  if (score === 10) {
     ctx.clearRect(0, 0, cvs.width, cvs.height);
     hitAudio.pause();
     ctx.fillStyle = '#000';
@@ -127,7 +127,7 @@ function startGame() {
   //////////////////////////////////   TIMER SECOND !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   (function () {
-    var times = 30;
+    var times = 60;
 
     timer(times);
 
@@ -138,7 +138,7 @@ function startGame() {
           clearInterval(tm);
           playAgain();
         } else if (times === -1) {
-          times = 30;
+          times = 60;
           times--;
         }
         var sec = (times < 10) ? '0' + times : times;
@@ -161,6 +161,8 @@ function startGame() {
 function playAgain() {
   sBox.innerHTML = 'TIMER';
   hitAudio.pause();
+  radio.pause();
+  scoreAudio.pause();
   divForPlayAgain.style.display = 'block';
   mainDiv.style.display = 'block';
   divForPlayAgain.style.display = 'block';
@@ -169,28 +171,6 @@ function playAgain() {
 function reload() {
   location.reload();
 }
-
-//  рисуем спрайт РЕШИТЬ ПРОБЛЕМУ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-// var width = 100,
-//   height = 67,
-//   frames = 3,
-//
-//   currentFrame = 0;
-//
-// var image = new Image();
-// image.src = 'img/sprite.png';
-//
-// var drawSprite = function () {
-//   ctx.clearRect(0, 0, width, height);
-//   ctx.drawImage(image, 300, height * currentFrame, width, height, 0, 0, width, height);
-//
-//   if (currentFrame === frames) {
-//     currentFrame = 0;
-//   } else {
-//     currentFrame++;
-//   }
-// };
-// setInterval(drawSprite, 100);
 
 pauseBox.onclick = function () {
   confirm('Игра остановлена. Для продолжения нажмите OK');
@@ -201,4 +181,3 @@ rulesBox.onclick = function () {
     'Не забывайте, что самолет имеет гравитацию.\n' +
     'Чтобы продолжите нажмите ОК');
 };
-

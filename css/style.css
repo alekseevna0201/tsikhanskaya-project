@@ -7,12 +7,18 @@ body {
   max-width: 1560px;
   margin: 0;
   padding: 0;
+  font-family: "Amatic SC";
+  width: 100%;
+  overflow: hidden;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background-image: url("../img/bg1.jpg");
+}
+
+#canvas {
+  position: absolute;
+  top: 50px;
 }
 
 input {
@@ -42,13 +48,17 @@ footer {
 #canvas, #main-background, #bg-win {
   position: absolute;
   left: 150px;
+}
+
+#canvas {
   border: 2px solid darkseagreen;
 }
 
 #main-background {
   width: 1000px;
   height: 600px;
-  background-image: url("../img/bg1.jpg");
+  background-image: url("../img/house.png");
+  background-size: cover;
 }
 
 #note {
@@ -78,11 +88,9 @@ footer {
   text-align: center;
   padding: 10px;
   cursor: pointer;
-  box-shadow: 10px 10px 15px grey;
 }
 
 #menu p, #play-again, #play {
-  font-family: "Amatic SC";
   font-size: 38px;
 }
 
@@ -110,21 +118,17 @@ footer {
 }
 
 .circle, .circle2{
-  border-radius: 100%;
   width: 20%;
   height: 20%;
   position: absolute;
-  left: 40%;
+  top: 0;
   cursor: pointer;
-  box-shadow: 10px 10px 15px grey;
-  background: darkolivegreen;
 }
 
 #logo {
   width: 110px;
   height: 110px;
   border: 10px solid darkolivegreen;
-  box-shadow: 10px 10px 15px grey;
   border-radius: 100%;
   position: relative;
   left: 88%;
@@ -145,4 +149,69 @@ footer {
   width: 1000px;
   height: 600px;
   display: none;
+}
+
+#drive, #about, #logo, .circle, .circle2, #menu p {
+  box-shadow: 10px 10px 15px grey;
+}
+
+#drive , #about {
+  width: 50%;
+  height: 400px;
+  position: absolute;
+  left: 25%;
+  top: 50px;
+  background: antiquewhite;
+}
+
+#drive {
+  font-size: 32px;
+  padding: 10px;
+}
+
+#plane {
+  position: absolute;
+  top: 150px;
+}
+
+#name, .describe {
+  position: absolute;
+  left: 40%;
+  color: rebeccapurple;
+}
+
+#name {
+  font-size: 82px;
+}
+
+.describe {
+  font-size: 52px;
+  top: 150px;
+}
+
+form {
+  height: 100%;
+  font-size: 32px;
+}
+
+fieldset {
+  clear:both;
+  text-align:right;
+}
+
+label {
+  float:left;
+}
+
+footer p {
+  font-size: 20px;
+  margin-left: 50px;
+  font-family: "Times New Roman";
+}
+
+#canva {
+  position: absolute;
+  left: 20%;
+  top: 50px;
+  background: lightgreen;
 }
