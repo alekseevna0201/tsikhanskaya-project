@@ -4,25 +4,101 @@
   <meta charset="UTF-8">
   <title>SPA</title>
   <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+  <script src="js/modernizr.custom.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 </head>
 <body id="body">
+<!--<canvas id="canva" width="100" height="67"></canvas>-->
 <div id="wrapper">
   <input type="button" value="Main" onclick="switchToFirst()">
   <input type="button" value="Game" onclick="switchToSecond()">
   <input type="button" value="How to drive" onclick="switchToThird()">
   <input type="button" value="About" onclick="switchToFour()">
   <div id="front"></div>
+  <a id="app" href="#"><img src="img/app.png" alt=""></a>
+  <a id="google" href="#"><img src="img/Google.png" alt=""></a>
   <canvas id="canvas" width="1000" height="568"></canvas>
-  <!--<canvas id='canva' width="700" height="400"></canvas>-->
   <footer id="footer">
     <p><a href="https://www.it-academy.by/">www.it-academy.by/</a></p>
     <p>Liubou Tsikhanskaya</p>
   </footer>
 </div>
-<script src="js/animate.js"></script>
+<div id="main-clearfix">
+  <div class="bb-custom-wrapper">
+    <div id="bb-bookblock" class="bb-bookblock">
+      <div class="bb-item">
+        <a href="http://drbl.in/bKVq"><img src="img/1.jpg" alt="image01"/></a>
+      </div>
+      <div class="bb-item">
+        <a href="http://drbl.in/ciTX"><img src="img/2.jpg" alt="image02"/></a>
+      </div>
+      <div class="bb-item">
+        <a href="http://drbl.in/cLHx"><img src="img/3.jpg" alt="image03"/></a>
+      </div>
+      <div class="bb-item">
+        <a href="http://drbl.in/bAfn"><img src="img/4.jpg" alt="image04"/></a>
+      </div>
+      <div class="bb-item">
+        <a href="http://drbl.in/dcbE"><img src="img/5.jpg" alt="image05"/></a>
+      </div>
+    </div>
+    <nav>
+      <a id="bb-nav-first" href="https://icons8.com" class="bb-custom-icon bb-custom-icon-first">First page</a>
+      <a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>
+      <a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
+      <a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Last page</a>
+    </nav>
+  </div>
+</div>
+<div>
+  <h2 id="h2">Сказка о маленьком самолетике</h2>
+  <p id="fairy-tayle">Жил-был Самолетик. Это был белый Самолетик с голубой полосой на боку и двумя красными звездочками на крыльях.
+    Он жил в красивой коробке, которая стояла под кроватью.
+    Алеша иногда выносил его погулять. Мальчик выходил на поле около дома, открывал коробку, доставал Самолетик и
+    пускал его полетать. Самолетик радостно взлетал вверх прямо с руки мальчика. Делал несколько кругов и послушно
+    опускался к ногам своего хозяина.
+  </p>
+  <p id="fairy-tayle2">
+    Но однажды Самолетик увлекся полетом и не заметил, как улетел очень далеко от своего мальчика. А когда Самолетик
+    опомнился, то не знал, в какую сторону ему возвращаться. Тогда он забрался в листву дерева и стал ждать Алешу.
+    Но Алеша не пришел. Дождик лил на Самолетик воду, солнце жгло Самолетику крылья.  А Самолетик всё ждал своего хозяина.
+    Когда, наконец, он понял, что Алеша его потерял и вряд ли сможет его найти, Самолетик решил действовать сам.
+    Он спросил Луну, не знает ли она, в какой стороне его, Самолетика, дом? Луна ответила, что не знает. А немного
+    подумав, сказала, что видела место, где жило очень много самолетов, и может показать ему дорогу.
+  </p>
+  <p id="fairy-tayle3">
+    Тогда Самолетик попросил помощи у Ветра. Ветер раскачал дерево, Самолетик взлетел и направился в ту сторону,
+    куда показала Луна.
+    Очень скоро, внизу он, действительно, увидел много самолетов. Одни из них взлетали, другие садились. Видно было,
+    что за ними очень бережно ухаживали: красили бока, мыли, кормили бензином.
+    Самолетик решил остаться на аэродроме, чтобы набраться сил для поиска своего мальчика.
+    Его очень радушно приняли. Большие самолеты приветствовали его рокотом. На аэродроме Самолетик отремонтировали,
+    покрасили. Он стал таким же красивым, каким и был, когда жил под кроватью Алеши. Самолетик остался на аэродроме.
+    Он тоже стал работать. Ему доверили развозить почту. Другие самолеты относились к нему с уважением. Его стали
+    узнавать в общем шуме самолетов.
+    Самолетик, конечно, этому радовался, но вечерами он мечтал, о том времени, когда он встретится со своим мальчиком.
+    И они встретились.
+  </p>
+  <p id="fairy-tayle4">
+    Однажды, возвращаясь из рейса, Самолетик пролетал над знакомым полем. На краю поля он увидел Алешу. Самолетик
+    радостно пошел на посадку, чтобы приземлится к ногам своего мальчика. Знакомая коробка стояла у его ног: значит,
+    мальчик всё ещё надеялся, что Самолетик вернется.
+    Конечно, Алеша узнал свой Самолетик с голубой полосой на боку и звездами на крыльях. Он был очень рад возвращению
+    своего Самолетика. Но оказалось, что за это время Самолетик стал больше своего хозяина. Теперь он не смог бы взлететь
+    с руки Алеши, даже не смотря на то, что и Алеша за это время вырос.
+    Но это не испортило радость от встречи друзей. Алеша сел в Самолетик, взялся за штурвал. Они вместе вернулись на
+    аэродром и больше никогда не расставались.
+  </p>
+</div>
+<!--<script src="js/animate.js"></script>-->
+<script src="js/jquery.bookblock.js"></script>
+<script src="js/book.js"></script>
 <script src="js/spa.js"></script>
 <script src="js/game.js"></script>
+<script>
+  Page.init();
+</script>
 </body>
 </html>
 

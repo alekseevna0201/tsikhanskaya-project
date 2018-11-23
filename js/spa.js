@@ -1,5 +1,5 @@
 'use strict';
-///// ЭТО для движения фона JQUARY
+/// ЭТО для движения фона JQUARY
 var bg_Offset = 0;
 function scroll_bg(){
   bg_Offset = bg_Offset - 1;
@@ -26,10 +26,16 @@ function renderNewState() {
     case 'first':
       page += "<img src='' alt='' id='phone'>" +
         "<img id=\"plane\" src=\"img/plane.png\" alt=\"\" style=\"transform: rotate(-30deg)\">" +
-        "<p id='name'>Drunk Plane</p>" +
+        "<p id='name'>Little Plane</p>" +
       "<p class='describe'>entertaining game</p>";
       document.getElementById('footer').style.display = 'block';
       document.getElementById('canvas').style.display = 'none';
+      document.getElementById('main-clearfix').style.display = 'none';
+      document.getElementById('h2').style.display = 'none';
+      document.getElementById('fairy-tayle').style.display = 'none';
+      document.getElementById('fairy-tayle2').style.display = 'none';
+      document.getElementById('fairy-tayle3').style.display = 'none';
+      document.getElementById('fairy-tayle4').style.display = 'none';
       break;
 
     case 'second':
@@ -45,39 +51,46 @@ function renderNewState() {
         '  <div id="forPlay">\n' +
         '    <p id="play">\n' +
         '      Play\n' +
-        '      <input type="button" class="circle" onclick="startGame()"></input>\n' +
+        '      <input type="button" class="but" onclick="startGame()"></input>\n' +
         '    </p>\n' +
         '  </div>\n' +
         '  <div id="lose">\n' +
         '    <p id="play-again">\n' +
         '      Play again\n' +
-        '    <input type="button" class="circle2" onclick="reload()"></input>\n' +
+        '    <input type="button" class="but2" onclick="reload()"></input>\n' +
         '    </p>\n' +
         '  </div>\n' +
         '  <div id="logo">\n' +
         '    <a href="">\n' +
         '      <img src="img/plane.png" alt="">\n' +
         '    </a>\n' +
-        '  </div>' +
-        '<script src="js/game.js"></script>' ;
+        '  </div>';
       document.getElementById('footer').style.display = 'none';
+      document.getElementById('canvas').style.display = 'block';
+      document.getElementById('main-clearfix').style.display = 'none';
+      document.getElementById('h2').style.display = 'none';
+      document.getElementById('fairy-tayle').style.display = 'none';
+      document.getElementById('fairy-tayle2').style.display = 'none';
+      document.getElementById('fairy-tayle3').style.display = 'none';
+      document.getElementById('fairy-tayle4').style.display = 'none';
+      document.getElementById('app').style.display = 'none';
+      document.getElementById('google').style.display = 'none';
       break;
 
     case 'third':
-      page +=  '<div id="drive">' +
-        '<p>Для управления самолетом просто нажимайте на любую клавишу.<br>' +
-        'Цель игры - обойти все препятствия за 60 секунд<br>' +
-        'Если Ваше время выходит, то игра начнется заново<br>' +
-        'Если персонаж столкнется с препятствием, то Вы также можете попробовать заново.<br>' +
-        'Счастливого пути!</p></div>' +
-        '  <div id="logo">\n' +
-        '    <a href="">\n' +
-        '      <img src="img/plane.png" alt="">\n' +
-        '    </a>\n' +
-        '  </div>';
+      page +=  '';
 
       document.getElementById('footer').style.display = 'block';
       document.getElementById('canvas').style.display = 'none';
+      document.getElementById('main-clearfix').style.display = 'block';
+      document.getElementById('h2').style.display = 'block';
+      document.getElementById('fairy-tayle').style.display = 'block';
+      document.getElementById('fairy-tayle2').style.display = 'block';
+      document.getElementById('fairy-tayle3').style.display = 'block';
+      document.getElementById('fairy-tayle4').style.display = 'block';
+      document.getElementById('footer').style.display = 'none';
+      document.getElementById('app').style.display = 'none';
+      document.getElementById('google').style.display = 'none';
       break;
 
     case 'four':
@@ -104,6 +117,15 @@ function renderNewState() {
       '  </div>';
       document.getElementById('footer').style.display = 'block';
       document.getElementById('canvas').style.display = 'none';
+      document.getElementById('canvas').style.display = 'none';
+      document.getElementById('main-clearfix').style.display = 'none';
+      document.getElementById('h2').style.display = 'none';
+      document.getElementById('fairy-tayle').style.display = 'none';
+      document.getElementById('fairy-tayle2').style.display = 'none';
+      document.getElementById('fairy-tayle3').style.display = 'none';
+      document.getElementById('fairy-tayle4').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+      document.getElementById('google').style.display = 'block';
       break;
   }
   document.getElementById('front').innerHTML = page;

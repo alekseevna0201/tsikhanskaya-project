@@ -27,6 +27,8 @@ var scoreAudio = new Audio();
 scoreAudio.src = "audio/score.mp3";
 var winAudio = new Audio();
 winAudio.src = "audio/win.mp3";
+var phoneAudio = new Audio();
+phoneAudio.src = "audio/phone-music.mp3";
 
 var divForPlay = document.querySelector('#forPlay');
 var divForPlayAgain = document.querySelector('#lose');
@@ -83,7 +85,10 @@ function draw() {
       document.getElementById('time').innerHTML = time;
       hitAudio.play();
       scoreAudio.pause();
-      ctx.clearRect(0, 0, cvs.width, cvs.height);
+      phoneAudio.pause();
+      ctx.clearRect(0, 0 ,cvsWidth, cvsHeight);
+      obstacle = [];
+      document.getElementById("canvas").style.display = 'none';
       playAgain();
     }
 
@@ -125,6 +130,7 @@ musicBox.onclick = function () {
 
 function startGame() {
   //////////////////////////////////   TIMER SECOND !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  phoneAudio.play();
 
   (function () {
     var times = 60;
@@ -160,12 +166,13 @@ function startGame() {
 
 function playAgain() {
   sBox.innerHTML = 'TIMER';
+  score = 0;
   hitAudio.pause();
+  phoneAudio.pause();
   radio.pause();
   scoreAudio.pause();
   divForPlayAgain.style.display = 'block';
   mainDiv.style.display = 'block';
-  divForPlayAgain.style.display = 'block';
 }
 
 function reload() {
