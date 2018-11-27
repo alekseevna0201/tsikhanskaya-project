@@ -1,6 +1,6 @@
 #main-clearfix {
-	float: left;
 	display: none;
+	margin-top: 5px;
 }
 
 .bb-bookblock {
@@ -31,14 +31,6 @@
 	transform-origin: left center;
 }
 
-.bb-horizontal .bb-page {
-	width: 100%;
-	height: 50%;
-	top: 50%;
-	-webkit-transform-origin: center top;
-	transform-origin: center top;
-}
-
 .bb-page > div,
 .bb-outer,
 .bb-content,
@@ -50,14 +42,6 @@
 	left: 0;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
-}
-
-.bb-vertical .bb-content {
-	width: 200%;
-}
-
-.bb-horizontal .bb-content {
-	height: 200%;
 }
 
 .bb-page > div {
@@ -82,17 +66,6 @@
 	z-index: 999;
 }
 
-.bb-overlay, 
-.bb-flipoverlay {
-	background-color: rgba(0, 0, 0, 0.7);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-}
-
 .bb-flipoverlay {
 	background-color: rgba(0, 0, 0, 0.2);
 }
@@ -110,10 +83,6 @@
 }
 
 /* Content display */
-.bb-content {
-	background: #fff;
-}
-
 .bb-vertical .bb-front .bb-content {
 	left: -100%;
 }
@@ -165,29 +134,12 @@
 	transform: rotateX(165deg);
 }
 
-.bb-item {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: none;
-	background: #fff;
-}
-
-/* No JS */
-.no-js .bb-bookblock, 
-.no-js ul.bb-custom-grid li {
-	width: auto;
-	height: auto;
-}
-
 .no-js .bb-item {
 	display: block;
 	position: relative;
 }
 
-.bb-item a img {
+.bb-item  img {
 	width: 400px;
 	height: 300px;
 }
@@ -196,17 +148,10 @@
 	width: 420px;
 	position: relative;
 	margin: 0 auto 40px;
-	text-align: center;
 }
 
 .bb-custom-wrapper .bb-bookblock {
-	box-shadow: 0 12px 20px -10px rgba(81,64,49,0.6);
-}
-
-.bb-custom-wrapper h3 {
-	font-size: 1.4em;
-	font-weight: 300;
-	margin: 0.4em 0 1em;
+	box-shadow: 0 12px 20px -10px rgba(81,64,49,0.9);
 }
 
 .bb-custom-wrapper nav {
@@ -230,10 +175,6 @@
 	margin: 2px;
 }
 
-.bb-custom-wrapper nav a:hover {
-	opacity: 0.6;
-}
-
 .bb-custom-icon:before {
 	speak: none;
 	font-style: normal;
@@ -246,47 +187,21 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-.bb-custom-icon-first:before,
-.bb-custom-icon-last:before {
-	content: "\e002";
-}
-
-.bb-custom-icon-arrow-left:before,
-.bb-custom-icon-arrow-right:before {
-	content: "\e003";
-}
-
-.bb-custom-icon-arrow-left:before,
-.bb-custom-icon-first:before {
-	-webkit-transform: rotate(180deg);
-	transform: rotate(180deg);
-}
-
-/* No JS */
-.no-js .bb-custom-wrapper {
-	height: auto;
-}
-
-.no-js .bb-custom-content {
-	height: 470px;
-}
-
 #fairy-tayle:first-letter, #fairy-tayle2:first-letter, #fairy-tayle3:first-letter, #fairy-tayle4:first-letter {
-	color: dodgerblue;
+	color: saddlebrown;
 	font-size: 25px;
-}
-
-#h2 {
-	text-align: center;
-	color: dodgerblue;
-	padding: 10px;
-	display: none;
 }
 
 #fairy-tayle, #fairy-tayle2, #fairy-tayle3, #fairy-tayle4 {
 	margin: 10px;
 	color: black;
 	position: relative;
-	font-family: "Times New Roman";
+	font-family: "Amatic SC";
+	font-weight: bold;
+	font-size: 22px;
   display: none;
+}
+
+.story {
+	background: #72b890;
 }

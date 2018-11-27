@@ -1,6 +1,6 @@
-var Page = (function() {
+let Page = (function() {
 
-  var config = {
+  let config = {
       $bookBlock : $( '#bb-bookblock' ),
       $navNext : $( '#bb-nav-next' ),
       $navPrev : $( '#bb-nav-prev' ),
@@ -17,7 +17,7 @@ var Page = (function() {
     },
     initEvents = function() {
 
-      var $slides = config.$bookBlock.children();
+      let $slides = config.$bookBlock.children();
 
       // add navigation events
       config.$navNext.on( 'click touchstart', function() {
@@ -54,7 +54,7 @@ var Page = (function() {
 
       // add keyboard events
       $( document ).keydown( function(e) {
-        var keyCode = e.keyCode || e.which,
+        let keyCode = e.keyCode || e.which,
           arrow = {
             left : 37,
             up : 38,
@@ -72,7 +72,5 @@ var Page = (function() {
         }
       } );
     };
-
   return { init : init };
-
 })();

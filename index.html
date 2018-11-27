@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SPA</title>
+  <title>Entertaining Portal Little Plane</title>
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
-  <script src="js/modernizr.custom.js"></script>
+  <script src="libraries/modernizr.custom.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 </head>
 <body id="body">
@@ -13,45 +13,45 @@
 <div id="wrapper">
   <input type="button" value="Main" onclick="switchToFirst()">
   <input type="button" value="Game" onclick="switchToSecond()">
-  <input type="button" value="How to drive" onclick="switchToThird()">
+  <input type="button" value="Little story" onclick="switchToThird()">
   <input type="button" value="About" onclick="switchToFour()">
   <div id="front"></div>
   <a id="app" href="#"><img src="img/app.png" alt=""></a>
   <a id="google" href="#"><img src="img/Google.png" alt=""></a>
   <canvas id="canvas" width="1000" height="568"></canvas>
   <footer id="footer">
-    <p><a href="https://www.it-academy.by/">www.it-academy.by/</a></p>
-    <p>Liubou Tsikhanskaya</p>
+    <p><a href="https://www.it-academy.by/">it-academy</a></p>
+    <p>Little Plane The Runner Game. All Rights Reserved.</p>
   </footer>
 </div>
 <div id="main-clearfix">
   <div class="bb-custom-wrapper">
     <div id="bb-bookblock" class="bb-bookblock">
       <div class="bb-item">
-        <a href="http://drbl.in/bKVq"><img src="img/1.jpg" alt="image01"/></a>
+        <img src="img/1.jpg" alt="image01"/>
       </div>
       <div class="bb-item">
-        <a href="http://drbl.in/ciTX"><img src="img/2.jpg" alt="image02"/></a>
+        <img src="img/2.jpg" alt="image02"/>
       </div>
       <div class="bb-item">
-        <a href="http://drbl.in/cLHx"><img src="img/3.jpg" alt="image03"/></a>
+        <img src="img/3.jpg" alt="image03"/>
       </div>
       <div class="bb-item">
-        <a href="http://drbl.in/bAfn"><img src="img/4.jpg" alt="image04"/></a>
+        <img src="img/4.jpg" alt="image04"/>
       </div>
       <div class="bb-item">
-        <a href="http://drbl.in/dcbE"><img src="img/5.jpg" alt="image05"/></a>
+        <img src="img/5.jpg" alt="image05"/>
       </div>
     </div>
     <nav>
-      <a id="bb-nav-first" href="https://icons8.com" class="bb-custom-icon bb-custom-icon-first">First page</a>
-      <a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>
-      <a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
-      <a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Last page</a>
+      <a id="bb-nav-first" href="https://icons8.com" class="bb-custom-icon bb-custom-icon-first"></a>
+      <a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left"></a>
+      <a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right"></a>
+      <a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last"></a>
     </nav>
   </div>
 </div>
-<div>
+<div class="story">
   <h2 id="h2">Сказка о маленьком самолетике</h2>
   <p id="fairy-tayle">Жил-был Самолетик. Это был белый Самолетик с голубой полосой на боку и двумя красными звездочками на крыльях.
     Он жил в красивой коробке, которая стояла под кроватью.
@@ -92,7 +92,7 @@
   </p>
 </div>
 <!--<script src="js/animate.js"></script>-->
-<script src="js/jquery.bookblock.js"></script>
+<script src="libraries/jquery.bookblock.js"></script>
 <script src="js/book.js"></script>
 <script src="js/spa.js"></script>
 <script src="js/game.js"></script>

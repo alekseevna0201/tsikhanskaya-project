@@ -1,42 +1,49 @@
 'use strict';
 
-var cvs = document.getElementById("canvas");
-var ctx = cvs.getContext("2d");
-var cvsWidth = 1024; // ширина
-var cvsHeight = 520; //высота
-var plane = new Image();
-var bg = new Image(); // Создание объекта
-var obstacleUp = new Image(); // Создание объекта
-var obstacleBottom = new Image(); // Создание объекта
-var house = new Image(); // Создание объекта
-var score = 0;
-var time = -1;
-var musicBox = document.querySelector('#mus');
+let cvs = document.getElementById("canvas");
+let ctx = cvs.getContext("2d");
+let cvsWidth = 1024; // ширина
+let cvsHeight = 520; //высота
+let score = 0;
+let time = -1;
 
-var xPos = 10; //позиция самолетика
-var yPos = 150;
-var grav = 1.5; // скорость притяжения к земле
-var gap = 200; /// доступное расстояние для обхода препятствий
+let xPos = 10; //позиция самолетика
+let yPos = 150;
+const grav = 1.5; // скорость притяжения к земле
+const gap = 200; /// доступное расстояние для обхода препятствий
 
 // обработка аудио
-var radio = new Audio();
-radio.src = "audio/music.mp3";
-var hitAudio = new Audio();
+
+let hitAudio = new Audio();
 hitAudio.src = "audio/zvuk-udar.mp3";
-var scoreAudio = new Audio();
+let scoreAudio = new Audio();
 scoreAudio.src = "audio/score.mp3";
-var winAudio = new Audio();
+let winAudio = new Audio();
 winAudio.src = "audio/win.mp3";
-var phoneAudio = new Audio();
+let phoneAudio = new Audio();
 phoneAudio.src = "audio/phone-music.mp3";
 
-var divForPlay = document.querySelector('#forPlay');
-var divForPlayAgain = document.querySelector('#lose');
-var mainDiv = document.querySelector('#main-background');
-var winDiv = document.querySelector('#bg-win');
-var sBox = document.getElementById('time');
-var pauseBox = document.getElementById('pause');
-var rulesBox = document.getElementById('read-rules');
+/// обработка необходимых для игры блоков
+
+let divForPlay = document.querySelector('#forPlay');
+let divForPlayAgain = document.querySelector('#lose');
+let mainDiv = document.querySelector('#main-background');
+let winDiv = document.querySelector('#bg-win');
+let sBox = document.getElementById('time');
+let pauseBox = document.getElementById('pause');
+let rulesBox = document.getElementById('read-rules');
+
+sBox.style.display = 'none';
+pauseBox.style.display = 'none';
+rulesBox.style.display = 'none';
+
+// обработка необходимых изображений
+
+let plane = new Image();
+let bg = new Image(); // Создание объекта
+let obstacleUp = new Image(); // Создание объекта
+let obstacleBottom = new Image(); // Создание объекта
+let house = new Image(); // Создание объекта
 
 house.src = "img/house.png";
 plane.src = "img/plane1.png"; // Указание нужного изображения
@@ -53,7 +60,7 @@ function moveUp() {
 }
 
 //создание препятствий
-var obstacle = [];
+let obstacle = [];
 obstacle[0] = {
   x: cvs.width / 2,
   y: 0
@@ -64,7 +71,7 @@ function draw() {
   yPos += grav;
   ctx.drawImage(bg, 0, 0);
 
-  for (var i = 0; i < obstacle.length; i++) {
+  for (let i = 0; i < obstacle.length; i++) {
     ctx.drawImage(obstacleUp, obstacle[i].x, obstacle[i].y);
     ctx.drawImage(obstacleBottom, obstacle[i].x, obstacle[i].y + obstacleUp.height + gap);
     obstacle[i].x--;
@@ -86,9 +93,9 @@ function draw() {
       hitAudio.play();
       scoreAudio.pause();
       phoneAudio.pause();
-      ctx.clearRect(0, 0 ,cvsWidth, cvsHeight);
+      ctx.clearRect(0, 0, cvsWidth, cvsHeight);
       obstacle = [];
-      document.getElementById("canvas").style.display = 'none';
+      cvs.style.display = 'none';
       playAgain();
     }
 
@@ -107,7 +114,7 @@ function draw() {
   ctx.shadowBlur = 3;
   ctx.fillText('Счет: ' + score, cvs.width / 2, 50);
 
-  if (score === 10) {
+  if (score === 6) {
     ctx.clearRect(0, 0, cvs.width, cvs.height);
     hitAudio.pause();
     ctx.fillStyle = '#000';
@@ -119,26 +126,20 @@ function draw() {
   requestAnimationFrame(draw);
 }
 
-musicBox.onclick = function () {
-  /* проверяем если музыка не на паузе воспроизводим*/
-  if (radio.paused === true) {
-    radio.play();
-  } else {
-    radio.pause();
-  }
-};
-
 function startGame() {
   //////////////////////////////////   TIMER SECOND !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   phoneAudio.play();
+  sBox.style.display = 'block';
+  pauseBox.style.display = 'block';
+  rulesBox.style.display = 'block';
 
   (function () {
-    var times = 60;
+    let times = 60;
 
     timer(times);
 
     function timer(times) {
-      var tm = setInterval(function () {
+      let tm = setInterval(function () {
         times--;
         if (times === 0) {
           clearInterval(tm);
@@ -147,7 +148,7 @@ function startGame() {
           times = 60;
           times--;
         }
-        var sec = (times < 10) ? '0' + times : times;
+        let sec = (times < 10) ? '0' + times : times;
 
         // выводим значение таймера на экран
         showTimer(sec);
@@ -165,11 +166,12 @@ function startGame() {
 }
 
 function playAgain() {
-  sBox.innerHTML = 'TIMER';
+  sBox.style.display = 'none';
+  pauseBox.style.display = 'none';
+  rulesBox.style.display = 'none';
   score = 0;
-  hitAudio.pause();
+  hitAudio.play();
   phoneAudio.pause();
-  radio.pause();
   scoreAudio.pause();
   divForPlayAgain.style.display = 'block';
   mainDiv.style.display = 'block';
@@ -179,12 +181,12 @@ function reload() {
   location.reload();
 }
 
-pauseBox.onclick = function () {
-  confirm('Игра остановлена. Для продолжения нажмите OK');
-};
-
-rulesBox.onclick = function () {
-  confirm('Для управления самолетом просто жмите любую клавишу.\n' +
-    'Не забывайте, что самолет имеет гравитацию.\n' +
-    'Чтобы продолжите нажмите ОК');
-};
+// pauseBox.onclick = function () {
+//   confirm('Игра остановлена. Для продолжения нажмите OK');
+// };
+//
+// rulesBox.onclick = function () {
+//   confirm('Для управления самолетом просто жмите любую клавишу.\n' +
+//     'Не забывайте, что самолет имеет гравитацию.\n' +
+//     'Чтобы продолжите нажмите ОК');
+// };
