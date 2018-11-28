@@ -6,7 +6,6 @@ let cvsWidth = 1024; // ширина
 let cvsHeight = 520; //высота
 let score = 0;
 let time = -1;
-
 let xPos = 10; //позиция самолетика
 let yPos = 150;
 const grav = 1.5; // скорость притяжения к земле
@@ -55,8 +54,8 @@ obstacleBottom.src = "img/tree.png"; // Аналогично
 document.addEventListener("keydown", moveUp);
 
 function moveUp() {
-  yPos -= 20;
-  xPos += 3;
+  yPos -= 25;
+  xPos += 2;
 }
 
 //создание препятствий
@@ -97,6 +96,7 @@ function draw() {
       obstacle = [];
       cvs.style.display = 'none';
       playAgain();
+      TestLoadScript();
     }
 
     if (obstacle[i].x === 40) {
@@ -104,6 +104,7 @@ function draw() {
       scoreAudio.play();
     }
   }
+
   ctx.drawImage(plane, xPos, yPos, 100, 70);
 
   ctx.fillStyle = '#048';
@@ -114,14 +115,15 @@ function draw() {
   ctx.shadowBlur = 3;
   ctx.fillText('Счет: ' + score, cvs.width / 2, 50);
 
-  if (score === 6) {
+  if (score === 2) {
     ctx.clearRect(0, 0, cvs.width, cvs.height);
     hitAudio.pause();
     ctx.fillStyle = '#000';
     ctx.font = '40px Verdana';
     ctx.fillText('Уровень успешно пройден! Поздравляем!', 25, 100);
     winAudio.play();
-    winDiv.style.display = 'block';
+    phoneAudio.pause();
+    mainDiv.style.display = 'none';
   }
   requestAnimationFrame(draw);
 }
@@ -132,6 +134,7 @@ function startGame() {
   sBox.style.display = 'block';
   pauseBox.style.display = 'block';
   rulesBox.style.display = 'block';
+  cvs.style.display = 'block';
 
   (function () {
     let times = 60;

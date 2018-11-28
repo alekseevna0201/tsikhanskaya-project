@@ -1,9 +1,9 @@
 'use strict';
 /// ЭТО для движения фона JQUARY
-var bg_Offset = 0;
+let bg_Offset = 0;
 function scroll_bg(){
   bg_Offset = bg_Offset - 1;
-  if (bg_Offset > 800) bg_Offset = 0;
+  if (bg_Offset > 600) bg_Offset = 0;
   $("body").css("backgroundPosition", bg_Offset + "px 0px");
 }
 $(document).ready(function(){ setInterval("scroll_bg()",150); });
@@ -11,21 +11,19 @@ $(document).ready(function(){ setInterval("scroll_bg()",150); });
 
 window.onhashchange = renderNewState;
 function renderNewState() {
-  var hash = window.location.hash;
-  var state = decodeURIComponent(hash.substr(1));
-  ''
+  let hash = window.location.hash;
+  let state = decodeURIComponent(hash.substr(1));
   if (state === '') {
     state = {page: 'first'};
   } else {
     state = JSON.parse(state);
   }
 
-  var page = '';
+  let page = '';
 
   switch(state.page) {
     case 'first':
-      page += `<img src='' alt='' id='phone'>
-        <img id=\"plane\" src=\"img/plane.png\" alt=\"\" style=\"transform: rotate(-30deg)\">
+      page += `<img id=\"plane\" src=\"img/plane.png\" alt=\"\" style=\"transform: rotate(-30deg)\">
         <p id='name'>Little Plane</p>
       <p class='describe'>entertaining game</p>`;
       document.getElementById('footer').style.display = 'block';
@@ -48,17 +46,9 @@ function renderNewState() {
             <p id="read-rules">RULES</p>\n 
             <p id="time">TIMER</p>\n 
           </div>\n
-          <div id="forPlay">\n 
-            <p id="play">\n
-              Play\n
-              <input type="button" class="but" onclick="startGame()"></input>\n
-            </p>\n
-          </div>\n
+          
           <div id="lose">\n
-            <p id="play-again">\n
-              Play again\n
-            <input type="button" class="but2" onclick="reload()"></input>\n
-            </p>\n
+            <input type="button" value="Play again" class="but2" onclick="reload()"></input>\n
           </div>\n
           <div id="logo">\n
             <a href="">\n
@@ -67,6 +57,7 @@ function renderNewState() {
           </div>'`;
       document.getElementById('footer').style.display = 'none';
       document.getElementById('canvas').style.display = 'block';
+      document.getElementById('forPlay').style.display = 'block';
       document.getElementById('main-clearfix').style.display = 'none';
       document.getElementById('h2').style.display = 'none';
       document.getElementById('fairy-tayle').style.display = 'none';
@@ -79,7 +70,7 @@ function renderNewState() {
 
     case 'third':
       page +=  '';
-
+      document.body.style.overflow = 'auto';
       document.getElementById('footer').style.display = 'block';
       document.getElementById('canvas').style.display = 'none';
       document.getElementById('main-clearfix').style.display = 'block';
@@ -128,6 +119,11 @@ function renderNewState() {
       document.getElementById('app').style.display = 'block';
       document.getElementById('google').style.display = 'block';
       break;
+
+    case 'five':
+      page += startGame();
+      break;
+
   }
   document.getElementById('front').innerHTML = page;
 }
@@ -146,5 +142,9 @@ function switchToThird() {
 }
 function switchToFour() {
   switchToState({page: 'four'});
+}
+
+function switchToFive() {
+  switchToState({page: 'five'});
 }
 renderNewState();

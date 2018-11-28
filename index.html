@@ -19,6 +19,10 @@
   <a id="app" href="#"><img src="img/app.png" alt=""></a>
   <a id="google" href="#"><img src="img/Google.png" alt=""></a>
   <canvas id="canvas" width="1000" height="568"></canvas>
+  <div id="forPlay">
+    <input type="button" value="Play" class="but" onclick="startGame()">
+  </div>
+
   <footer id="footer">
     <p><a href="https://www.it-academy.by/">it-academy</a></p>
     <p>Little Plane The Runner Game. All Rights Reserved.</p>
@@ -44,10 +48,10 @@
       </div>
     </div>
     <nav>
-      <a id="bb-nav-first" href="https://icons8.com" class="bb-custom-icon bb-custom-icon-first"></a>
-      <a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left"></a>
-      <a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right"></a>
-      <a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last"></a>
+      <input type="button" id="bb-nav-first" class="bb-custom-icon bb-custom-icon-first" value="First">
+      <input type="button" id="bb-nav-prev" class="bb-custom-icon bb-custom-icon-arrow-left" value="<">
+      <input type="button" id="bb-nav-next" class="bb-custom-icon bb-custom-icon-arrow-right" value=">">
+      <input type="button" id="bb-nav-last" class="bb-custom-icon bb-custom-icon-last" value="Last">
     </nav>
   </div>
 </div>
@@ -96,6 +100,7 @@
 <script src="js/book.js"></script>
 <script src="js/spa.js"></script>
 <script src="js/game.js"></script>
+
 <script>
   Page.init();
 </script>
