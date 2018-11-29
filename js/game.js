@@ -27,14 +27,11 @@ phoneAudio.src = "audio/phone-music.mp3";
 let divForPlay = document.querySelector('#forPlay');
 let divForPlayAgain = document.querySelector('#lose');
 let mainDiv = document.querySelector('#main-background');
+let sBox = document.querySelector('#time');
 let winDiv = document.querySelector('#bg-win');
-let sBox = document.getElementById('time');
+let menu = document.querySelector('#menu');
 let pauseBox = document.getElementById('pause');
 let rulesBox = document.getElementById('read-rules');
-
-sBox.style.display = 'none';
-pauseBox.style.display = 'none';
-rulesBox.style.display = 'none';
 
 // обработка необходимых изображений
 
@@ -96,7 +93,6 @@ function draw() {
       obstacle = [];
       cvs.style.display = 'none';
       playAgain();
-      TestLoadScript();
     }
 
     if (obstacle[i].x === 40) {
@@ -123,7 +119,7 @@ function draw() {
     ctx.fillText('Уровень успешно пройден! Поздравляем!', 25, 100);
     winAudio.play();
     phoneAudio.pause();
-    mainDiv.style.display = 'none';
+    divForPlayAgain.style.display = 'none';
   }
   requestAnimationFrame(draw);
 }
@@ -131,9 +127,7 @@ function draw() {
 function startGame() {
   //////////////////////////////////   TIMER SECOND !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   phoneAudio.play();
-  sBox.style.display = 'block';
-  pauseBox.style.display = 'block';
-  rulesBox.style.display = 'block';
+  menu.style.display = 'block';
   cvs.style.display = 'block';
 
   (function () {
@@ -169,9 +163,9 @@ function startGame() {
 }
 
 function playAgain() {
-  sBox.style.display = 'none';
-  pauseBox.style.display = 'none';
-  rulesBox.style.display = 'none';
+  menu.style.display = 'none';
+  mainDiv.style.display = 'block';
+
   score = 0;
   hitAudio.play();
   phoneAudio.pause();
@@ -184,12 +178,12 @@ function reload() {
   location.reload();
 }
 
-// pauseBox.onclick = function () {
-//   confirm('Игра остановлена. Для продолжения нажмите OK');
-// };
-//
-// rulesBox.onclick = function () {
-//   confirm('Для управления самолетом просто жмите любую клавишу.\n' +
-//     'Не забывайте, что самолет имеет гравитацию.\n' +
-//     'Чтобы продолжите нажмите ОК');
-// };
+pauseBox.onclick = function () {
+  confirm('Игра остановлена. Для продолжения нажмите OK');
+};
+
+rulesBox.onclick = function () {
+  confirm('Для управления самолетом просто жмите любую клавишу.\n' +
+    'Не забывайте, что самолет имеет гравитацию.\n' +
+    'Чтобы продолжите нажмите ОК');
+};

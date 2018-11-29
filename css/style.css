@@ -55,6 +55,9 @@ footer {
 
 #menu {
   position: absolute;
+  top: 0;
+  z-index: 100;
+  display: none;
 }
 
 #menu p {
@@ -111,6 +114,7 @@ footer {
   border-radius: 100%;
   position: relative;
   left: 88%;
+  top: -350px;
 }
 
 #logo img {

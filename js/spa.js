@@ -27,8 +27,11 @@ function renderNewState() {
         <p id='name'>Little Plane</p>
       <p class='describe'>entertaining game</p>`;
       document.getElementById('footer').style.display = 'block';
+      document.getElementById('front').style.display = 'block';
+      document.getElementById('forPlay').style.display = 'none';
       document.getElementById('canvas').style.display = 'none';
       document.getElementById('main-clearfix').style.display = 'none';
+      document.getElementById('main-background').style.display = 'none';
       document.getElementById('h2').style.display = 'none';
       document.getElementById('fairy-tayle').style.display = 'none';
       document.getElementById('fairy-tayle2').style.display = 'none';
@@ -39,23 +42,8 @@ function renderNewState() {
 
     case 'second':
       page +=
-         `<div id="main-background"></div>\n 
-         <div id="bg-win"></div>\n 
-          <div id="menu">\n' 
-            <p id="pause">PAUSE</p>\n 
-            <p id="read-rules">RULES</p>\n 
-            <p id="time">TIMER</p>\n 
-          </div>\n
-          
-          <div id="lose">\n
-            <input type="button" value="Play again" class="but2" onclick="reload()"></input>\n
-          </div>\n
-          <div id="logo">\n
-            <a href="">\n
-              <img src="img/plane.png" alt="">\n
-            </a>\n
-          </div>'`;
       document.getElementById('footer').style.display = 'none';
+      document.getElementById('front').style.display = 'none';
       document.getElementById('canvas').style.display = 'block';
       document.getElementById('forPlay').style.display = 'block';
       document.getElementById('main-clearfix').style.display = 'none';
@@ -71,6 +59,7 @@ function renderNewState() {
     case 'third':
       page +=  '';
       document.body.style.overflow = 'auto';
+      document.getElementById('forPlay').style.display = 'none';
       document.getElementById('footer').style.display = 'block';
       document.getElementById('canvas').style.display = 'none';
       document.getElementById('main-clearfix').style.display = 'block';
@@ -101,17 +90,15 @@ function renderNewState() {
             <input type="button" value="To send">
           </fieldset>\n
         </form>
-        </div>
-        <div id="logo">\n
-          <a href="">\n
-            <img src="img/plane.png" alt="">\n
-          </a>\n
         </div>`;
       document.getElementById('footer').style.display = 'block';
-      document.getElementById('canvas').style.display = 'none';
+      document.getElementById('logo').style.display = 'block';
+      document.getElementById('forPlay').style.display = 'none';
+      document.getElementById('lose').style.display = 'none';
       document.getElementById('canvas').style.display = 'none';
       document.getElementById('main-clearfix').style.display = 'none';
       document.getElementById('h2').style.display = 'none';
+      document.getElementById('front').style.display = 'block';
       document.getElementById('fairy-tayle').style.display = 'none';
       document.getElementById('fairy-tayle2').style.display = 'none';
       document.getElementById('fairy-tayle3').style.display = 'none';
@@ -148,3 +135,9 @@ function switchToFive() {
   switchToState({page: 'five'});
 }
 renderNewState();
+
+window.onbeforeunload = function(e) {
+  let dialogText = 'Dialog text here';
+  e.returnValue = dialogText;
+  return dialogText;
+};
