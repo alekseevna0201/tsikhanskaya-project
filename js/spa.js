@@ -45,6 +45,7 @@ function renderNewState() {
       document.getElementById('footer').style.display = 'none';
       document.getElementById('front').style.display = 'none';
       document.getElementById('canvas').style.display = 'block';
+      document.getElementById('main-background').style.display = 'block';
       document.getElementById('forPlay').style.display = 'block';
       document.getElementById('main-clearfix').style.display = 'none';
       document.getElementById('h2').style.display = 'none';
@@ -71,6 +72,7 @@ function renderNewState() {
       document.getElementById('footer').style.display = 'none';
       document.getElementById('app').style.display = 'none';
       document.getElementById('google').style.display = 'none';
+      document.getElementById('main-background').style.display = 'none';
       break;
 
     case 'four':
@@ -105,6 +107,7 @@ function renderNewState() {
       document.getElementById('fairy-tayle4').style.display = 'none';
       document.getElementById('app').style.display = 'block';
       document.getElementById('google').style.display = 'block';
+      document.getElementById('main-background').style.display = 'none';
       break;
   }
   document.getElementById('front').innerHTML = page;

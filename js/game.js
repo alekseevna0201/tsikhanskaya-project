@@ -129,6 +129,7 @@ function startGame() {
   phoneAudio.play();
   menu.style.display = 'block';
   cvs.style.display = 'block';
+  mainDiv.style.display = 'none';
 
   (function () {
     let times = 60;
@@ -164,7 +165,7 @@ function startGame() {
 
 function playAgain() {
   menu.style.display = 'none';
-  mainDiv.style.display = 'block';
+  mainDiv.style.display = 'none';
 
   score = 0;
   hitAudio.play();

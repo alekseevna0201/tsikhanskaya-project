@@ -1,0 +1,32 @@
+@media (max-width: 1000px) {
+  #plane {
+    width: 200px;
+    height: 150px;
+  }
+
+  #app, #google {
+    float: left;
+    margin-top: 300px;
+    width: 150px;
+    display: block;
+  }
+
+  #google {
+    margin-left: 200px;
+  }
+
+  #name {
+    font-size: 50px;
+  }
+
+  #describe {
+    font-size: 32px;
+    top: -300px;
+  }
+
+  #google-div, #app-div {
+    width: 150px;
+    display: inline-block;
+    float: left;
+  }
+}

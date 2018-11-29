@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Entertaining Portal Little Plane</title>
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/media.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
   <script src="libraries/modernizr.custom.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -15,8 +16,12 @@
     <input type="button" value="Little story" onclick="switchToThird()">
     <input type="button" value="About" onclick="switchToFour()">
     <div id="front"></div>
-    <a id="app" href="#"><img src="img/app.png" alt=""></a>
-    <a id="google" href="#"><img src="img/Google.png" alt=""></a>
+    <div id="app-div">
+      <a id="app" href="#"><img src="img/app.png" alt=""></a>
+    </div>
+    <div id="google-div">
+      <a id="google" href="#"><img src="img/Google.png" alt=""></a>
+    </div>
     <canvas id="canvas" width="1000" height="568"></canvas>
     <div id="forPlay">
       <input type="button" value="Play" class="but" onclick="startGame()">
@@ -112,7 +117,6 @@
       аэродром и больше никогда не расставались.
     </p>
   </div>
-  <!--<script src="js/animate.js"></script>-->
   <script src="libraries/jquery.bookblock.js"></script>
   <script src="js/book.js"></script>
   <script src="js/spa.js"></script>

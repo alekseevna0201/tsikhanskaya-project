@@ -206,3 +206,9 @@ footer p a {
 #forPlay {
   display: none;
 }
+
+#google-div, #app-div {
+  width: 300px;
+  display: inline-block;
+  float: right;
+}
