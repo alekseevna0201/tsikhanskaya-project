@@ -106,11 +106,6 @@ function renderNewState() {
       document.getElementById('app').style.display = 'block';
       document.getElementById('google').style.display = 'block';
       break;
-
-    case 'five':
-      page += startGame();
-      break;
-
   }
   document.getElementById('front').innerHTML = page;
 }
@@ -131,9 +126,6 @@ function switchToFour() {
   switchToState({page: 'four'});
 }
 
-function switchToFive() {
-  switchToState({page: 'five'});
-}
 renderNewState();
 
 window.onbeforeunload = function(e) {
