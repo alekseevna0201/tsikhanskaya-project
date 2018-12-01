@@ -42,7 +42,6 @@ footer {
 }
 
 #canvas {
-  border: 3px solid darkorange;
   display: none;
 }
 
@@ -64,6 +63,9 @@ footer {
   position: relative;
   width: 80%;
   height: 50px;
+  background: -webkit-gradient(linear, left top, left bottom, from(darkolivegreen), to(yellow));
+  background: -webkit-linear-gradient(darkolivegreen, yellow);
+  background: -o-linear-gradient(darkolivegreen, yellow);
   background: linear-gradient(darkolivegreen, yellow);
   left: 10%;
   text-align: center;
@@ -84,6 +86,7 @@ footer {
   top: 40%;
   border: 5px solid black;
   border-radius: 5px;
+  -webkit-box-shadow: 10px 10px 35px black;
   box-shadow: 10px 10px 35px black;
   z-index: 100;
 }
@@ -123,6 +126,8 @@ footer {
   top: 5px;
   width: 100px;
   height: 100px;
+  -webkit-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
   transform: rotate(-20deg);
 }
 
@@ -135,6 +140,7 @@ footer {
 }
 
 #drive, #about, #logo, .circle, .circle2, #menu p {
+  -webkit-box-shadow: 10px 10px 15px grey;
   box-shadow: 10px 10px 15px grey;
 }
 
@@ -211,4 +217,13 @@ footer p a {
   width: 300px;
   display: inline-block;
   float: right;
+}
+
+.story p {
+  margin: 7px;
+}
+
+h2 {
+  text-align: center;
+  text-decoration: underline;
 }

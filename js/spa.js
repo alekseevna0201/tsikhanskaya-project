@@ -45,7 +45,7 @@ function renderNewState() {
       document.getElementById('footer').style.display = 'none';
       document.getElementById('front').style.display = 'none';
       document.getElementById('canvas').style.display = 'block';
-      document.getElementById('main-background').style.display = 'block';
+      document.getElementById('main-background').style.display = 'none';
       document.getElementById('forPlay').style.display = 'block';
       document.getElementById('main-clearfix').style.display = 'none';
       document.getElementById('h2').style.display = 'none';

@@ -20,7 +20,10 @@
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 	-webkit-transition-property: -webkit-transform;
+	transition-property: -webkit-transform;
+	-o-transition-property: transform;
 	transition-property: transform;
+	transition-property: transform, -webkit-transform;
 }
 
 .bb-vertical .bb-page {
@@ -28,6 +31,7 @@
 	height: 100%;
 	left: 50%;
 	-webkit-transform-origin: left center;
+	-ms-transform-origin: left center;
 	transform-origin: left center;
 }
 
@@ -151,6 +155,7 @@
 }
 
 .bb-custom-wrapper .bb-bookblock {
+	-webkit-box-shadow: 0 12px 20px -10px rgba(81,64,49,0.9);
 	box-shadow: 0 12px 20px -10px rgba(81,64,49,0.9);
 }
 
@@ -199,7 +204,7 @@
 	font-family: "Amatic SC";
 	font-weight: bold;
 	font-size: 22px;
-  display: none;
+	display: none;
 }
 
 .story {

@@ -8,19 +8,19 @@ let score = 0;
 let time = -1;
 let xPos = 10; //позиция самолетика
 let yPos = 150;
-const grav = 1.5; // скорость притяжения к земле
+const grav = 1.5; // скорость притяжения персонажа к земле
 const gap = 200; /// доступное расстояние для обхода препятствий
 
 // обработка аудио
 
 let hitAudio = new Audio();
-hitAudio.src = "audio/zvuk-udar.mp3";
+hitAudio.src = "audio/zvuk-udar.mp3"; /// звук удара персонажа о препятствие
 let scoreAudio = new Audio();
-scoreAudio.src = "audio/score.mp3";
+scoreAudio.src = "audio/score.mp3";///// звук добавление очков
 let winAudio = new Audio();
-winAudio.src = "audio/win.mp3";
+winAudio.src = "audio/win.mp3";///// звук победы
 let phoneAudio = new Audio();
-phoneAudio.src = "audio/phone-music.mp3";
+phoneAudio.src = "audio/phone-music.mp3";///// фоновая музыка
 
 /// обработка необходимых для игры блоков
 
@@ -47,12 +47,14 @@ bg.src = "img/bg2.jpg"; // Аналогично
 obstacleUp.src = "img/rock.png"; // Аналогично
 obstacleBottom.src = "img/tree.png"; // Аналогично
 
-//самолет вверх при клике
+//событие при клике на любую клавишу или при тачскрине
+// самолетик подлетает вверх
 document.addEventListener("keydown", moveUp);
+document.addEventListener("touchstart", moveUp);
 
 function moveUp() {
-  yPos -= 25;
-  xPos += 2;
+  yPos -= 25; //// смена позиции по оси y при событии
+  xPos += 2; //// аналогично по оси x
 }
 
 //создание препятствий
@@ -62,29 +64,32 @@ obstacle[0] = {
   y: 0
 };
 
-////////////////////////////////ОТРИСОВКА!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+////////////// Функция отрисовки игры на канвас
 function draw() {
   yPos += grav;
   ctx.drawImage(bg, 0, 0);
 
+/////////////// этот цикл обходит препятствия сверху и снизу
   for (let i = 0; i < obstacle.length; i++) {
     ctx.drawImage(obstacleUp, obstacle[i].x, obstacle[i].y);
     ctx.drawImage(obstacleBottom, obstacle[i].x, obstacle[i].y + obstacleUp.height + gap);
     obstacle[i].x--;
 
-    if (obstacle[i].x === 450) {
-      obstacle.push({
+    if (obstacle[i].x === 450) {  /////// когда препятствие находится на расстоянии в 450 пикселей по x
+      obstacle.push({ /////////////     то создается и пушится в массив новое препятствие
         x: cvs.width,
-        y: Math.floor(Math.random() * obstacleUp.height) - obstacleUp.height
+        y: Math.floor(Math.random() * obstacleUp.height) - obstacleUp.height ///// рандомная высота препятствия чтобы было интересней
       });
     }
 
+    ////////////////// проверяем обход препятствия или прикосновение к нижней границе канваса
     if (xPos + plane.width >= obstacle[i].x
       && xPos <= obstacle[i].x + obstacleUp.width
       && (yPos <= obstacle[i].y + obstacleUp.height
         || yPos + plane.height >= obstacle[i].y + obstacleUp.height + gap)
       || yPos + plane.height >= cvs.height) {
 
+      ///////// обработка действий в случае неудачи в игре
       document.getElementById('time').innerHTML = time;
       hitAudio.play();
       scoreAudio.pause();
@@ -95,14 +100,16 @@ function draw() {
       playAgain();
     }
 
+    ///////// добавление очков если препятствие находится по оси x  на расстоянии 40 пикселей
     if (obstacle[i].x === 40) {
       score++;
       scoreAudio.play();
     }
   }
 
-  ctx.drawImage(plane, xPos, yPos, 100, 70);
+  ctx.drawImage(plane, xPos, yPos, 100, 70); ///// отрисовка персонажа
 
+  /////// отрисовка счета
   ctx.fillStyle = '#048';
   ctx.font = '50px Verdana';
   ctx.shadowColor = 'rgb(50,50,50)';
@@ -111,7 +118,8 @@ function draw() {
   ctx.shadowBlur = 3;
   ctx.fillText('Счет: ' + score, cvs.width / 2, 50);
 
-  if (score === 2) {
+  ////////////// обработка победного случая
+  if (score === 5) {
     ctx.clearRect(0, 0, cvs.width, cvs.height);
     hitAudio.pause();
     ctx.fillStyle = '#000';
@@ -125,17 +133,17 @@ function draw() {
 }
 
 function startGame() {
-  //////////////////////////////////   TIMER SECOND !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  //////// появление необходимых блоков и фоновой музыки при старте игры
   phoneAudio.play();
   menu.style.display = 'block';
   cvs.style.display = 'block';
   mainDiv.style.display = 'none';
 
+  ///////// таймер обратного отсчета - на прохождение уровня игры есть 60 секунд
   (function () {
     let times = 60;
-
     timer(times);
-
     function timer(times) {
       let tm = setInterval(function () {
         times--;
@@ -146,7 +154,7 @@ function startGame() {
           times = 60;
           times--;
         }
-        let sec = (times < 10) ? '0' + times : times;
+        let sec = (times < 10) ? '0' + times : times; ///// добавление 0 перед однозначным числом
 
         // выводим значение таймера на экран
         showTimer(sec);
@@ -166,7 +174,6 @@ function startGame() {
 function playAgain() {
   menu.style.display = 'none';
   mainDiv.style.display = 'none';
-
   score = 0;
   hitAudio.play();
   phoneAudio.pause();
@@ -186,5 +193,5 @@ pauseBox.onclick = function () {
 rulesBox.onclick = function () {
   confirm('Для управления самолетом просто жмите любую клавишу.\n' +
     'Не забывайте, что самолет имеет гравитацию.\n' +
-    'Чтобы продолжите нажмите ОК');
+    'Чтобы продолжить нажмите "ОК"');
 };
