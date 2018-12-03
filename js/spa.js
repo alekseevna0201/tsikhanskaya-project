@@ -21,6 +21,7 @@ function renderNewState() {
       document.getElementById('front').style.display = 'block';
       document.getElementById('forPlay').style.display = 'none';
       document.getElementById('canvas').style.display = 'none';
+      document.getElementById('lose').style.display = 'none';
       document.getElementById('main-clearfix').style.display = 'none';
       document.getElementById('main-background').style.display = 'none';
       document.getElementById('h2').style.display = 'none';
@@ -33,7 +34,7 @@ function renderNewState() {
 
     case 'second':
       page +=
-      document.getElementById('footer').style.display = 'none';
+      document.getElementById('footer').style.display = 'block';
       document.getElementById('front').style.display = 'none';
       document.getElementById('canvas').style.display = 'block';
       document.getElementById('main-background').style.display = 'none';
@@ -51,6 +52,9 @@ function renderNewState() {
     case 'third':
       page +=  '';
       document.body.style.overflow = 'auto';
+      document.getElementById('footer').style.display = 'block';
+      document.getElementById('footer').style.zIndex = '0';
+      document.getElementById('lose').style.display = 'none';
       document.getElementById('forPlay').style.display = 'none';
       document.getElementById('footer').style.display = 'block';
       document.getElementById('canvas').style.display = 'none';

@@ -111,3 +111,15 @@
     cursor: pointer;
   }
 }
+
+@media (min-width: 1560px) {
+  footer {
+    height: 200px;
+  }
+}
+
+@media (min-width: 1750px) {
+  footer {
+    height: 400px;
+  }
+}
